@@ -1,1 +1,1 @@
-**preview**: https://ecommercy.tahbert.vercel.app
+**preview**: https://ecommery.vercel.app
