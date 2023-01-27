@@ -1,5 +1,4 @@
 import React from "react";
-import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useProductsContext } from "../context/products_context";
@@ -13,9 +12,8 @@ const CartButtons = () => {
   return (
     <Wrapper className="cart-btn-wrapper">
       <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
-        cart
         <span className="cart-container">
-          <FaShoppingCart />
+          <img className="cart-icon" src="/icons/cart.svg" alt="cart" />
           <span className="cart-value">{total_items}</span>
         </span>
       </Link>
@@ -29,11 +27,11 @@ const CartButtons = () => {
             logout({ returnTo: window.location.origin });
           }}
         >
-          logout <FaUserMinus />
+          <img className="login-icon" src="/icons/login.svg" alt="login" />
         </button>
       ) : (
         <button type="button" className="auth-btn" onClick={loginWithRedirect}>
-          login <FaUserPlus />
+          <img className="logout-icon" src="/icons/logout.svg" alt="logout" />
         </button>
       )}
     </Wrapper>
@@ -44,12 +42,14 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  width: 225px;
+  width: fit-content;
+  gap: 30px;
 
   .cart-btn {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
+    font-weight: 500;
     color: var(--grey800);
     letter-spacing: var(--spacing);
   }
@@ -57,10 +57,10 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     position: relative;
-    svg {
-      height: 1.6rem;
-      margin-left: 5px;
-    }
+  }
+  .cart-icon {
+    height: 1.6rem;
+    margin-left: 5px;
   }
   .cart-value {
     position: absolute;
@@ -82,13 +82,16 @@ const Wrapper = styled.div`
     align-items: center;
     border-color: transparent;
     font-size: 1.5rem;
+    font-weight: 500;
     cursor: pointer;
     color: var(--grey800);
     background: transparent;
     letter-spacing: var(--spacing);
-    svg {
-      margin-left: 5px;
-    }
+  }
+  .login-icon,
+  .logout-icon {
+    height: 1.6rem;
+    margin-left: 5px;
   }
 `;
 export default CartButtons;

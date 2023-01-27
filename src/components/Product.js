@@ -40,11 +40,12 @@ const Wrapper = styled.article`
   }
   footer h5,
   footer p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0;
     font-weight: 400;
   }
   footer p {
+    font-weight: 500;
     color: var(--primaryColor);
     letter-spacing: var(--spacing);
   }

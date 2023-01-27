@@ -19,9 +19,12 @@ const Sidebar = () => {
       >
         <div className="sidebar-header">
           <img src={logo} className="logo" alt="logo" />
-          <button className="close-btn" type="button" onClick={closeSidebar}>
-            <FaTimes />
-          </button>
+          <img
+            className="close-icon"
+            src="icons/close.svg"
+            alt="close"
+            onClick={closeSidebar}
+          />
         </div>
         <ul className="links">
           {links.map(({ id, text, url }) => {
@@ -53,20 +56,10 @@ const SidebarContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.8rem;
   }
-  .close-btn {
-    font-size: 2rem;
-    background: transparent;
-    border-color: transparent;
-    color: var(--clr-primary-5);
-    transition: var(--transition);
-    cursor: pointer;
-    color: var(--clr-red-dark);
-    margin-top: 0.2rem;
-  }
-  .close-btn:hover {
-    color: var(--clr-red-light);
+  .close-icon {
+    height: 2.2rem;
   }
   .links {
     margin-bottom: 2rem;
@@ -93,7 +86,7 @@ const SidebarContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--clr-white);
+    background: var(--grey50);
     transition: var(--transition);
     transform: translate(-100%);
     z-index: -1;

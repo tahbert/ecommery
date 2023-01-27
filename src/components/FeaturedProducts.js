@@ -48,7 +48,8 @@ const Wrapper = styled.section`
   }
   .btn {
     display: block;
-    width: 148px;
+    width: fit-content;
+    padding: 10px 16px;
     margin: 0 auto;
     text-align: center;
   }

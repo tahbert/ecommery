@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
-import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import CartButtons from "./CartButtons";
@@ -18,7 +17,7 @@ const Nav = () => {
             <img className="logo" src={logo} alt="logo" />
           </Link>
           <button type="button" className="nav-toggle" onClick={openSidebar}>
-            <FaBars />
+            <img className="bars-icon" src="icons/bars.svg" alt="bars" />
           </button>
         </div>
         <ul className="nav-links">
@@ -62,9 +61,9 @@ const NavContainer = styled.nav`
     border: transparent;
     color: var(--grey800);
     cursor: pointer;
-    svg {
-      font-size: 2rem;
-    }
+  }
+  .bars-icon {
+    height: 1.6rem;
   }
   .nav-links {
     display: none;
